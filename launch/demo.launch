@@ -1,4 +1,5 @@
 <launch>
+  <arg name="robot_id" default="panda" />
   <arg name="arm_id" default="panda" />
 
   <!-- specify the planning pipeline -->

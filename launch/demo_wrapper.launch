@@ -1,0 +1,18 @@
+<launch>
+  <arg name="robot_id" default="panda"/>
+  <arg name="arm_id" value="$(arg robot_id)_franka" />
+
+  <!-- specify the planning pipeline -->
+  <arg name="pipeline" default="ompl" />
+
+  <!-- Panda specific options -->
+  <arg name="load_gripper" default="false" />
+  <arg name="transmission" default="effort" />
+
+  <include file="$(dirname)/demo.launch" pass_all_args="true">
+    <arg name="load_robot_description" value="true" />
+    <!-- MoveItSimpleControllerManager provides ros_control's JointTrajectory controllers
+         as well as GripperCommand actions -->
+    <arg name="moveit_controller_manager" value="simple" />
+  </include>
+</launch>
