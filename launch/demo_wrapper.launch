@@ -6,7 +6,7 @@
   <arg name="pipeline" default="ompl" />
 
   <!-- Panda specific options -->
-  <arg name="load_gripper" default="false" />
+  <arg name="load_gripper" default="true" />
   <arg name="transmission" default="effort" />
 
   <include file="$(dirname)/demo.launch" pass_all_args="true">

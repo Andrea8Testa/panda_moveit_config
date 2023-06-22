@@ -2,6 +2,7 @@ controller_list:
   - name: wrapper_moveit
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
+    default: True
     joints:
       - $(arg arm_id)_joint1
       - $(arg arm_id)_joint2
@@ -10,3 +11,9 @@ controller_list:
       - $(arg arm_id)_joint5
       - $(arg arm_id)_joint6
       - $(arg arm_id)_joint7
+  - name: wrapper_moveit_gripper
+    action_ns: gripper_action
+    type: GripperCommand
+    default: True
+    joints:
+      - $(arg arm_id)_franka_gripper_finger_joint1
